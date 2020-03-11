@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Колесо Жизненного Баланса</title>
+	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+	<main>
+		<header class="header">
+			<div class="layout-center-wrapper">
+				<div class="header__inner">
+					<div class="header__left">
+						<span class="header__online">Старт <br> тренинга <br> {{data["event"]["date"]}} </span>
+						<h1 class="header__title">Колесо жизненного баланса</h1>
+						<div class="header__subtitle">Создай баланс <br> в 5 сферах жизни <br> за 21 день</div>
+					</div>
+					<div class="header__right">
+						<div class="form__wrap form__wrap--header">
+							<form class="form">
+								<div class="form__inner">
+									<input name="name" value="{{lead_name}}" type="text"
+										placeholder="Ваши имя и фамилия" required class="form__field"
+										id="userNameHeader">
+									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
+										class="form__field" required id="userPhoneHeader">
+									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
+										required class="form__field" id="userEmailHeader">
+									{% if lead_name %}
+									<input class="form__btn button noselect" type="button" value="Купить курс"
+										onclick="scrollToTickets()">
+									{% else %}
+									<input class="form__btn button noselect" type="button" value="Зарегистрироваться"
+										onclick="addLead('Header')">
+									{% end %}
+								</div>
+
+								<label class="form__footer">
+									<input class="form__checkbox" type="checkbox" name="personalDataAgree" checked>
+
+									<span class="form__footer-text">Я согласен с
+										<a href="docs/policy.pdf" download="">политикой конфиденциальности</a>
+									</span>
+								</label>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- 5 LEARN -->
+		<div class="learn">
+			<h2 class="learn__title">Вы узнаете как</h2>
+			<div class="learn__inner">
+				<div class="learn__left"></div>
+				<div class="learn__right">
+					<ul class="learn__list">
+						<li class="learn__item">
+							<span class="learn__num">1</span>
+							<span class="learn__text">Наладить отношения с близкими людьми или найти вторую свою
+								половину</span>
+						</li>
+
+						<li class="learn__item">
+							<span class="learn__num">2</span>
+							<span class="learn__text">Вести здоровый образ жизни, сбросить лишний вес, уделять
+								больше времени своему здоровью, начать заниматься спортом</span>
+						</li>
+
+						<li class="learn__item">
+							<span class="learn__num">3</span>
+							<span class="learn__text">Ставить правильные цели и достигать их с помощью специальных
+								алгоритмов. Научиться выйходить из зоны комфорта. Найти свое хобби, открывать новые
+								горизонты</span>
+						</li>
+
+						<li class="learn__item">
+							<span class="learn__num">4</span>
+							<span class="learn__text">Управлять финансами и привлечь в свою жизнь денежные
+								потоки</span>
+						</li>
+
+						<li class="learn__item">
+							<span class="learn__num">5</span>
+							<span class="learn__text">Реорганизовать свой бизнес и научиться эффективно использовать
+								социальные сети для роста и продвижения</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- LEAD FORM -->
+		<div class="layout-center-wrapper">
+			<div class="form__wrap form__wrap--lead" id="formLead1">
+				<h3 class="form__title">Регистрация</h3>
+				<form class="form" action="#">
+					<div class="form__inner form__inner--lead">
+						<input name="name" value="{{lead_name}}" type="text" placeholder="Ваши имя и фамилия" required
+							class="form__field form__field--lead" id="userNameLead1">
+						<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
+							class="form__field form__field--lead" required id="userPhoneLead1">
+						<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email" required
+							class="form__field form__field--lead" id="userEmailLead1">
+						{% if lead_name %}
+						<input class="form__btn button noselect" type="button" value="Купить курс"
+							onclick="scrollToTickets()">
+						{% else %}
+						<input class="form__btn button noselect" type="button" value="Зарегистрироваться"
+							onclick="addLead('Lead1')">
+						{% end %}
+					</div>
+
+					<label class="form__footer">
+						<input class="form__checkbox" type="checkbox" name="personalDataAgree" checked>
+
+						<span class="form__footer-text">Я согласен с
+							<a href="docs/policy.pdf" download="">политикой конфиденциальности</a>
+						</span>
+					</label>
+				</form>
+			</div>
+		</div>
+
+		<!-- 5 SPHERES -->
+		<div class="spheres">
+			<div class="layout-center-wrapper">
+				<h2 class="spheres__header">Ваша жизнь изменится <br> <span>навсегда!</span></h2>
+				<div class="spheres__wrap">
+					<ul class="spheres__list">
+						<li class="spheres__item">
+							<img src="" alt="" class="spheres__img spheres__img--finance">
+							<div class="spheres__inner">
+								<h2 class="spheres__title">Финансы</h2>
+								<p class="spheres__text">Умение управлять денежными потоками</p>
+								<p class="spheres__text">Финансовая грамотность</p>
+								<p class="spheres__text">Финансовая стабильность</p>
+							</div>
+						</li>
+						<li class="spheres__item spheres__item--reverse">
+							<img src="" alt="" class="spheres__img spheres__img--health">
+							<div class="spheres__inner">
+								<h2 class="spheres__title">Здоровье</h2>
+								<p class="spheres__text">Программа
+									по укреплению здоровья</p>
+								<p class="spheres__text">
+									Правильное питание</p>
+								<p class="spheres__text">
+									Активный отдых</p>
+							</div>
+						</li>
+						<li class="spheres__item">
+							<img src="" alt="" class="spheres__img spheres__img--business">
+							<div class="spheres__inner">
+								<h2 class="spheres__title">Бизнес</h2>
+								<p class="spheres__text">Поможем найти своё дело</p>
+								<p class="spheres__text">
+									Новые пути развития имеющегося бизнеса</p>
+								<p class="spheres__text">
+									Получать удовольствия от бизнеса</p>
+							</div>
+						</li>
+						<li class="spheres__item spheres__item--reverse">
+							<img src="" alt="" class="spheres__img spheres__img--relations">
+							<div class="spheres__inner">
+								<h2 class="spheres__title">Отношения</h2>
+								<p class="spheres__text">Отношения в паре и семье</p>
+								<p class="spheres__text">Отношения с самим собой</p>
+								<p class="spheres__text">
+									Отношения в бизнесе</p>
+							</div>
+						</li>
+						<li class="spheres__item">
+							<img src="" alt="" class="spheres__img spheres__img--self">
+							<div class="spheres__inner">
+								<h2 class="spheres__title">Саморазвитие</h2>
+								<p class="spheres__text">Научиться понимать себя</p>
+								<p class="spheres__text">Законы Вселенной</p>
+								<p class="spheres__text">Быть в гармонии с самим собой и окружающими</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="video">
+			<div class="layout-center-wrapper">
+				<div class="video__wrap">
+					<div class="video__left">
+						<iframe class="video__frame" src="https://www.youtube.com/embed/rOUcITm2IxE" frameborder="0"
+							allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen></iframe>
+					</div>
+					<div class="video__right">
+						<h3 class="video__title">Мы возьмем вас за руку и пройдем <span>вместе с вами</span> весь путь
+							от <span>А</span> до <span>Я</span></h3>
+
+						<p class="video__text">Поможем создать крепкие отношения в семье</p>
+						<p class="video__text">Расскажем, как увеличить свой ежемесячный доход</p>
+						<p class="video__text">Покажем, как за <span>21 день</span> избавиться от вредных привычек</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section class="speakers">
+			<div class="layout-center-wrapper">
+				<h2 class="speakers__title">Вас будут сопровождать лучшие тренеры</h2>
+				<ul class="speakers__list">
+					<li class="speakers__item">
+						<div class="speakers__img-wrap">
+							<img src="img/speaker_05.jpg" alt="Ламара и Игорь Жабины">
+						</div>
+						<div class="speakers__inner">
+							<span class="speakers__name">
+								Ламара и Игорь Жабины
+							</span> 
+							<span class="speakers__about">
+								ТОП-лидеры индустрии, 25 лет в сетевом бизнесе
+							</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<div class="layout-center-wrapper" id="buy_ticket">
+			<h2 class="buy-course__title">Купить курс</h2>
+			<div class="buy-course" id="standartTicket">
+				<div class="buy-course__wrap">
+					<div class="buy-course__info">
+						<div class="buy-course__price-wrap">
+							<span class="buy-course__price">Стоимость:</span>
+							<span class="buy-course__price buy-course__price--prew">3500 рублей</span>
+							<span class="buy-course__price buy-course__price--new">1990 рублей</span>
+						</div>
+
+						<p class="buy-course__name">В программу входит:</p>
+						<ul class="buy-course__adavantages">
+							<li class="buy-course__data">Поддержка авторов проекта</li>
+							<li class="buy-course__data">Доступ ко всем материалам и разработанным методикам</li>
+							<li class="buy-course__data">Доступ в личный кабинет</li>
+							<li class="buy-course__data">Доступ в закрытую группу в facebook</li>
+							<li class="buy-course__data">Доступ к участию во всех вебинарах</li>
+							<li class="buy-course__data">Доступ к обсуждению результатов дня</li>
+							<li class="buy-course__data">Консультации по выполнению всех заданий</li>
+							<li class="buy-course__data">Доступ к просмотру результатов дня от других участников</li>
+							<li class="buy-course__data">Коллаж по итогам тренинга</li>
+							<li class="buy-course__data">Ежедневные новости и интересные знания</li>
+
+						</ul>
+					</div>
+
+					<div class="buy-payment">
+						<div class="buy-course__form-wrap buy-course__form-wrap--rur" id="paymentFormRUR">
+							<form class="form" action="#">
+								<p class="form__link" id="paymentMethodLink">Вернуться к выбору способа оплаты</p>
+								<div class="form__inner">
+									<input name="name" value="{{lead_name}}" type="text"
+										placeholder="Ваши имя и фамилия" required class="form__field"
+										id="userNameFormRUR">
+									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
+										class="form__field" required id="userPhoneFormRUR">
+									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
+										required class="form__field" id="userEmailFormRUR">
+									<input name="number" type="number" placeholder="Количество билетов" value="1"
+										min="1" required class="form__field" id="ticketsNumFormRUR">
+
+									<input class="form__btn button noselect" type="button" value="Оплатить"
+										onclick="addTicket('FormRUR')">
+								</div>
+
+								<label class="form__footer">
+									<input class="form__checkbox" type="checkbox" name="personalDataAgree" checked>
+
+									<span class="form__footer-text">Я согласен с
+										<a href="docs/policy.pdf" download="">политикой
+											конфиденциальности</a>
+									</span>
+								</label>
+							</form>
+
+						</div>
+						<div class="buy-course__form-wrap buy-course__form-wrap--ntz" id="paymentFormNTZ">
+							<form class="form" action="#">
+								<p class="form__link" id="paymentMethodLink2">Вернуться к выбору способа оплаты</p>
+								<div class="form__inner">
+									<input name="login" value="{{lead_login}}" type="text"
+										placeholder="Ваш логин в ntz.team" required class="form__field"
+										id="userLoginFormNTZ">
+									<input name="name" value="{{lead_name}}" type="text"
+										placeholder="Ваши имя и фамилия" required class="form__field"
+										id="userNameFormNTZ">
+									<input name="phone" value="{{lead_phone}}" type="tel" placeholder="Ваш телефон"
+										class="form__field" required id="userPhoneFormNTZ">
+									<input name="email" value="{{lead_email}}" type="email" placeholder="Ваш email"
+										required class="form__field" id="userEmailFormNTZ">
+									<input name="number" type="number" placeholder="Количество билетов" value="1"
+										min="1" required class="form__field" id="ticketsNumFormNTZ">
+
+									<input class="form__btn button noselect" type="button" value="Оплатить"
+										onclick="addTicket('FormNTZ')">
+								</div>
+
+								<label class="form__footer">
+									<input class="form__checkbox" type="checkbox" name="personalDataAgree" checked>
+
+									<span class="form__footer-text">Я согласен с
+										<a href="docs/policy.pdf" download="">политикой
+											конфиденциальности</a>
+									</span>
+								</label>
+							</form>
+
+						</div>
+						<div class="buy-payment__wrap" id="paymentMethod">
+							<div class="buy-payment__inner">
+								<p class="buy-payment__text">Выберите удобный способ оплаты</p>
+								<div class="buy-payment__btn-wrap">
+									<div class="buy-payment__block">
+										<img class="buy-payment__img" src="img/visa_mastercassrd.png"
+											alt="visa mastercard">
+										<span class="buy-payment__btn" id="buyBtnRUR">Оплатить в рублях</span>
+									</div>
+									<div class="buy-payment__block">
+										<img class="buy-payment__img" src="img/ntz.png" alt="Netizens">
+										<span class="buy-payment__btn" id="buyBtnNTZ">Оплатить в NTZ</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="footer__contacts">
+				<div class="layout-center-wrapper">
+					<div class="footer__contacts-inner">
+						<a class="footer__link footer__link--email"
+							href="mailto:kolesobalansa2019@gmail.com">kolesobalansa2019@gmail.com</a>
+					</div>
+
+					<div class="footer-docs">
+						<p class="footer-docs__text">Все права защищены <span id="year"></span> <span
+								class="footer-docs__copy">© Колесо Жизненного
+								Баланса</span></p>
+						<ul class="footer-docs__links">
+							<li class="footer-docs__item">
+								<a href="docs/политика конфиденциальности.pdf" download="">Политика
+									конфиденциальности</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+		</footer>
+
+
+	</main>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/maskedinput.js"></script>
+	<script type="text/javascript" src="js/api.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+</body>
+
+</html>

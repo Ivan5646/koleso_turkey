@@ -1,0 +1,187 @@
+.form {
+    &__wrap {
+        box-sizing: border-box;
+        &--header {
+            width: 400px;
+            padding: 40px 30px;
+            background-color: rgba(255, 255, 255, 0.21);
+            border-radius: 10px;
+            box-shadow: 0 10px 42px #000;
+            box-sizing: border-box;
+        }
+        &--lead {
+            margin-bottom: 60px;
+            padding: 40px 30px;
+            background: linear-gradient(90deg,#2196F3 0,#8dc44d 100%);
+            & .form__field {
+                border: 1px solid #ffffff;
+                color: #ffffff;
+            }
+        }
+    }
+    &__title {
+        margin-bottom: 30px;
+        font-family: @proximaNova-xb, Arial, Helvetica, sans-serif;
+        font-size: 34px;
+        color: #ffffff;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        &--lead {
+            flex-direction: row;
+        }
+    }
+    &__field {
+        background-color: rgba(252, 252, 250, 0.18);
+        border: 1px solid #afafaf;
+        padding: 18px;
+        font-family: @proximaNova, Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #3a2d27;
+        box-sizing: border-box;
+        &--lead {
+            margin-right: 20px;
+        }
+        &:focus {
+            background-color: transparent;
+            border: 1px solid #3a2d27;
+            padding: 18px;
+            outline: none;
+        }
+        &:active {
+            background-color: transparent;
+            border: 1px solid #3a2d27;
+            padding: 18px;
+            outline: none;
+        }
+    }
+    &__btn {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 20px 30px;
+        box-sizing: border-box;
+        &--lead {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+    &__close-btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        display: block;
+        width: 25px;
+        height: 25px;
+        background-image: url('../img/close-cross.png');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: contain;
+        z-index: 101;
+        cursor: pointer;
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__checkbox {
+        width: 20px;
+        height: 20px;
+        margin-right: 15px;
+    }
+    &__footer-text {
+        font-family: @proximaNova-l, Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        color: #000;
+        & a {
+            color: #000;
+        }
+    }
+    &__link {
+        font-family: SegoeUI-L,Arial,Helvetica,sans-serif;
+        font-size: 22px;
+        margin-bottom: 40px;
+        text-decoration: underline;
+        color: #5a4136;
+        cursor: pointer;
+    }
+}
+
+.form__field::-webkit-input-placeholder {
+    color: #5a4136;
+}
+
+
+/* ADAPTIVE */
+
+@media @tablet {
+    .form {
+        &__inner--lead {
+            -ms-flex-direction: row;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            & .form__btn {
+                width: 480px;
+            }
+        }
+        &__field {
+            &--lead {
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+@media @phablet {
+    .form {
+        &__inner--lead {
+            flex-direction: column;
+            & .form__btn {
+                width: 100%;
+            }
+        }
+        & .form__footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &__field {
+            &--lead {
+                width: 100%;
+                margin-right: 0;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &__checkbox {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+        }
+    }
+}
+@media @phone {
+    .form {
+        &__wrap {
+            width: 100%;
+            &--header {
+                padding: 40px 20px;
+            }
+            &--popup {
+                width: 320px;
+                top: 20px;
+                margin-left: -160px;
+                & .form__btn {
+                    padding: 20px 10px;
+                }
+            }
+        }
+    }
+}

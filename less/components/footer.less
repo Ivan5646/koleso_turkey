@@ -1,0 +1,48 @@
+.footer {
+    &__contacts {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background: linear-gradient(90deg,#2196F3 0,#8dc44d 100%);
+    }
+    &__contacts-inner {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ffffff;
+        text-align: center;
+    }
+    &__link {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: @proximaNova-bl, Arial, Helvetica, sans-serif;
+        font-size: 28px;
+    }
+}
+.footer-docs {
+    &__text {
+        opacity: 0.59;
+        color: #FFFFFF;
+    }
+    &__links {
+        margin-top: 13px;
+        opacity: 0.59;
+    }
+    &__item {
+        & a {
+            font-size: 18px;
+            line-height: 22px;
+            color: #ffffff;
+        }
+    }
+}
+@media @phone {
+    .footer {
+        &__link {
+            font-size: 22px;
+        }
+    }
+    .footer-docs{
+        &__copy {
+            display: block;
+        }
+    }
+}

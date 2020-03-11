@@ -1,0 +1,128 @@
+.learn {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    &__title {
+        font-family: @segoe-l, Arial, Helvetica, sans-serif;
+        font-size: 66px;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    } 
+    &__left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 900px;
+        height: 600px;
+        z-index: 10;
+        background-image: url('../img/learn.jpg');
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    &__right {
+        position: absolute;
+        width: 50%;
+        margin-left: -190px;
+        padding: 60px 40px;
+        background-color: #fff;
+        box-shadow: 3px 0 18px #68686a;
+        z-index: 30;
+        left: 50%;
+    } 
+    &__item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__num {
+        margin-right: 14px;
+        font-size: 45px;
+        color: #ffa11f;
+        font-family: @proximaNova-bl, Arial, Helvetica, sans-serif;
+        border: 3px solid #8BC34A;
+        padding: 7px;
+        border-radius: 50%;
+        width: 45px;
+        display: inline-block;
+        height: 45px;
+        line-height: 1;
+        text-align: center;
+    }
+    &__text {
+        font-family: @proximaNova, Arial, Helvetica, sans-serif;
+        font-size: 23px;
+        line-height: 1.1;
+        display: inline-block;
+        width: 80%;
+    }
+}
+
+/*ADAPTIVE*/
+@media @tablet {
+    .learn {
+        &__right {
+            width: 530px;
+            margin-left: -97px;
+            padding: 38px 30px;
+        }
+        &__text {
+            font-size: 20px;
+        }
+    }
+}
+@media @phablet {
+    .learn {
+        padding-bottom: 0;
+        &__inner {
+            justify-content: space-between;
+            flex-direction: column-reverse;
+        }
+        &__left {
+            width: 100%;
+            margin-left: 0;
+            padding: 38px 30px;
+            margin-top: 0;
+            box-sizing: border-box;
+        }
+        &__right {
+            position: static;
+            width: 100%;
+            margin-left: 0;
+            padding: 38px 30px;
+            box-sizing: border-box;
+        }
+        &__text {
+            font-size: 20px;
+        }
+    }
+}
+@media @phone {
+    .learn {
+        &__title {
+            font-size: 44px;
+        }
+        &__right {
+            padding: 38px 20px;
+        }
+        &__num {
+            margin-right: 14px;
+            font-size: 28px;
+            width: 28px;
+            height: 28px;
+        }
+        &__text {
+            font-size: 18px;
+        }
+    }
+}
