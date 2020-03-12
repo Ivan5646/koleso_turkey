@@ -1,0 +1,90 @@
+.payment {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    background-color: #fff;
+    border-radius: 10px;
+    &__header {
+        display: flex;
+        align-items: center;    
+        justify-content: flex-start;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 70px;
+        padding-right: 70px;
+        background-color: @decor-bg;
+    }
+    &__text {
+        .training-text(@title-col);
+        margin-right: 20px;
+    }
+    &__amount {
+        .training-title(36px, 0);
+        color: #EBB537;
+    }
+    &__inner {
+        padding-top: 38px;
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+    &__btns-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &:first-child {
+            margin-bottom: 20px;
+        }
+        & .template-btn {
+            width: 280px;
+        }
+        & img {
+            display: block;
+            margin-left: 30px;
+            width: 117px;
+            height: auto;
+        }
+    }
+}
+@media @tablet {
+    .payment {
+        &__btns-wrap {
+            justify-content: flex-start;
+        }
+    }
+}
+@media @phone {
+    .payment {
+        padding-bottom: 36px;
+        &__header {
+            padding-top: 19px;
+            padding-bottom: 17px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        &__text {
+            margin-right: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+            width: 90px;
+        }
+        &__amount {
+            .training-title(30px, 0);
+        }
+        &__inner {
+            padding-top: 30px;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        &__btns-wrap {
+            display: block;
+            margin-bottom: 30px;
+            .template-btn {
+                width: 100%;
+                margin-bottom: 12px;
+                box-shadow: 0px 3px 15px 16px #eee;
+            }
+            & img {
+                margin: 0 auto;
+            }
+        }
+    }
+}

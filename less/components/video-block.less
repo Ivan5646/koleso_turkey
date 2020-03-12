@@ -1,0 +1,65 @@
+.video-block {
+    padding-top: 215px;
+    padding-bottom: 270px;
+    margin-bottom: -60px;
+    background-color: #F4F4F4;
+    background: linear-gradient(-@bg-deg,#F4F4F4 79%,#fff 50%);
+    &__inner {
+        display: grid;
+        grid-template-columns: 380px @video-width;
+        justify-content: space-between;
+    }
+    &__left {
+        width: 390px;
+    }
+    &__title {
+        .training-title(36px, 32px);
+    }
+    &__text {
+        .training-text(@base-text-col);
+    }
+    &__right {
+        display: flex;
+    }
+    &__frame {
+        width: 100%;
+        height: calc(@video-width*0.5714);
+    }
+}
+@media @tablet {
+    .video-block {
+        padding-top: 100px;
+        padding-bottom: 240px;
+        &__inner {
+            display: grid;
+            grid-template-columns: 100%;
+        }
+        &__title {
+            .training-title(36px, 32px);
+            line-height: 46px;
+        }
+        &__left {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+}
+@media @phone {
+    @video-width: 300px;
+
+    .video-block {
+        padding-top: 60px;
+        padding-bottom: 130px;
+        background: linear-gradient(-@bg-deg,#F4F4F4 89%,#fff 50%);
+        &__title {
+            .training-title(24px, 26px);
+        }
+        &__left {
+            margin-bottom: 36px;
+        }
+        &__frame {
+            width: 100%;
+            height: calc(@video-width*0.5714);
+        }
+    }
+}

@@ -1,24 +1,37 @@
 $(document).ready(function(){
-   /*  OPEN FORM */
-    $('#buyBtnRUR').on('click', function() {
-		$('#paymentMethod').fadeOut('100');
-		$('#paymentFormRUR').fadeIn('100');
-	});
-    $('#buyBtnNTZ').on('click', function() {
-		$('#paymentMethod').fadeOut('100');
-		$('#paymentFormNTZ').fadeIn('100');
-    });
+    // open rur form
+    $('#cardBtn').on('click', function() {
+        $('#formOverlay').fadeIn();
+        $('#paymentFormRUR').fadeIn();
+    })
 
-    /* OPEN METHOD */
-    $('#paymentMethodLink').on('click', function() {        
-		$('#paymentMethod').fadeIn('100');
-		$('#paymentFormRUR').fadeOut('100');
-    });
-    $('#paymentMethodLink2').on('click', function() {        
-		$('#paymentMethod').fadeIn('100');
-		$('#paymentFormNTZ').fadeOut('100');
-    });
+    // open ntz form
+    $('#ntzdBtn').on('click', function() {
+        $('#formOverlay').fadeIn();
+        $('#paymentFormNTZ').fadeIn();
+    })
 
-    /* FOOTER */
-    $("#year").html(new Date().getFullYear());
+    // close rur form
+    $('#closeRurForm').on('click', function() {
+        $('#formOverlay').fadeOut();
+        $('#paymentFormRUR').fadeOut();
+    })
+
+    // close ntz form
+    $('#closeNTZForm').on('click', function() {
+        $('#formOverlay').fadeOut();
+        $('#paymentFormNTZ').fadeOut();
+    })
+    
+    // scroll to payment
+    $('#headerToPaymentBtn').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $("#paymentBlock").offset().top
+        }, 1500);
+    })
+    $('#middleToPaymentBtn').on('click', function() {
+        $('html, body').animate({
+            scrollTop: $("#paymentBlock").offset().top
+        }, 1500);
+    })
 })

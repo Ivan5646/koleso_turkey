@@ -1,0 +1,56 @@
+.coach-block {
+    padding-bottom: 120px;
+    padding-top: 60px;
+    &__inner {
+        display: grid;
+        grid-template-columns: 500px 570px;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title {
+        .training-title(36px, 72px);
+    }
+    &__img-wrap {
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__name {
+        .training-title(28px, 20px);
+        text-transform: none;
+    }
+    &__text {
+        .training-text((@base-text-col));
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+}
+@media @tablet {
+    .coach-block {
+        padding-bottom: 100px;
+        &__inner {
+            grid-template-columns: 100%;
+        }
+        &__title {
+            .training-title(30px, 18px);
+        }
+        &__img-wrap {
+            margin-bottom: 50px;
+        }
+        &__name {
+            margin-bottom: 30px;
+        }
+    }
+}
+@media @phone {
+    .coach-block {
+        padding-bottom: 60px;
+        &__title {
+            .training-title(24px, 18px);
+        }
+        &__desc-wrap {
+            text-align: center;
+        }
+    }
+}

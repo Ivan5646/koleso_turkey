@@ -1,41 +1,11 @@
-@font-face {
-	font-family: "ProximaNova";
-	src: url("../fonts/ProximaNova-Regular.woff");
-}
-@font-face {
-	font-family: "ProximaNova-Bl";
-	src: url("../fonts/ProximaNova-Black.woff");
-}
-@font-face {
-	font-family: "ProximaNova-L";
-	src: url("../fonts/ProximaNova-Light.woff");
-}
-@font-face {
-	font-family: "ProximaNova-XB";
-	src: url("../fonts/ProximaNova-Extrabld.woff");
-}
-@font-face {
-	font-family: "ProximaNovaExCn";
-	src: url("../fonts/ProximaNovaExCn-Black.woff");
-}
-@font-face {
-	font-family: "SegoeUI-L";
-	src: url("../fonts/SegoeUI-Light.woff");
-}
-@font-face {
-	font-family: "Corinthia";
-	src: url("../fonts/Corinthia.woff");
-}
-
-
-
 html, body {
 	padding: 0;
 	margin: 0;
 }
 body {
+	position: relative;
 	width: 100%;
-	font-family: @proximaNova, Arial, Helvetica, sans-serif;
+	font-family: @montserrat, Arial, Helvetica, sans-serif;
 	color: @base-text-col;
 }
 
@@ -53,32 +23,30 @@ ul {
 }
 .layout-center-wrapper {
 	position: relative;
-	width: 1140px;
+	width: 1170px;
 	margin: 0 auto;
 }
-.noselect {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-}
 * {
+	box-sizing: border-box;
 	&:focus, &:active, &:hover {
 		outline: none;
 	}
+}
+input[type='number']::-webkit-inner-spin-button, 
+input[type='number']::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /*ADAPTIVE*/
 
 @media @tablet {
 	.layout-center-wrapper {
-		width: 950px;
+		width: 644px;
 	}
 }
-@media @phablet {
+@media @phone {
 	.layout-center-wrapper {
-		width: 95%;
+		width: 300px;
 	}
 }

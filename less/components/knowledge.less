@@ -1,0 +1,105 @@
+.knowledge {
+    padding-top: 50px;
+    padding-bottom: 150px;
+    &__inner {
+        display: grid;
+        grid-template-columns: 570px 570px;
+        justify-content: space-between;
+    }
+    &__title {
+        .training-title(36px, 72px);
+        position: relative;
+    }
+    &__list {
+        margin-right: 50px;
+    }
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 50px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        margin-right: 20px;
+        margin-top: -16px;
+        background-color: @decor-bg;
+        border-radius: 50%;
+        & span {
+            font-family: @futura-b, Arial, Helvetica, sans-serif;
+            font-size: 36px;
+            color: #EBB537;
+        }
+    }
+    &__text {
+        .training-text(@base-text-col);
+        width: 415px;   
+    }
+    &__img-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: -104px;
+        overflow: hidden;
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+@media @tablet {
+    .knowledge {
+        padding-bottom: 100px;
+        &__inner {
+            grid-template-columns: 100%;
+        }
+        &__title {
+            .training-title(30px, 66px);
+        }
+        &__list {
+            margin-right: 0;
+            width: 550px;
+            padding-bottom: 30px;
+            background-color: rgba(255, 255, 255, 0.6);
+            z-index: 20;
+        }
+        &__item {
+            justify-content: space-around;
+        }
+    }
+}
+@media @phone {
+    .knowledge {
+        padding-top: 34px;
+        padding-bottom: 60px;
+        &__title {
+            .training-title(26px, 52px);
+        }
+        &__list {
+            width: 100%;
+            background: none;
+        }
+        &__num {
+            top: -8px;
+            width: 50px;
+            height: 50px;
+        }
+        &__text {
+            font-size: 16px;
+            width: 230px;
+        }
+        &__item {
+            top: -36px;
+        }
+        &__img-wrap {
+            margin-top: -36px;
+        }
+    }
+}

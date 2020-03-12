@@ -1,187 +1,118 @@
 .form {
-    &__wrap {
-        box-sizing: border-box;
-        &--header {
-            width: 400px;
-            padding: 40px 30px;
-            background-color: rgba(255, 255, 255, 0.21);
-            border-radius: 10px;
-            box-shadow: 0 10px 42px #000;
-            box-sizing: border-box;
-        }
-        &--lead {
-            margin-bottom: 60px;
-            padding: 40px 30px;
-            background: linear-gradient(90deg,#2196F3 0,#8dc44d 100%);
-            & .form__field {
-                border: 1px solid #ffffff;
-                color: #ffffff;
-            }
-        }
+    position: relative;
+    &__overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(45, 45, 45, 0.7);
+        z-index: 50;
     }
-    &__title {
-        margin-bottom: 30px;
-        font-family: @proximaNova-xb, Arial, Helvetica, sans-serif;
-        font-size: 34px;
-        color: #ffffff;
-        text-align: center;
-        text-transform: uppercase;
+    &__wrap {
+        display: none;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        margin-left: -290px;
+        width: 580px;
+        z-index: 100;
     }
     &__inner {
-        display: flex;
-        flex-direction: column;
-        &--lead {
-            flex-direction: row;
-        }
+        padding: 50px 87px 50px;
+        background-color: #fff;
+        border-radius: 10px;
+        text-align: center;
+    }
+    &__title {
+        .training-title(36px, 20px);
+    }
+    &__text {
+        .training-text(@title-col);
+        margin-bottom: 40px;
     }
     &__field {
-        background-color: rgba(252, 252, 250, 0.18);
-        border: 1px solid #afafaf;
-        padding: 18px;
-        font-family: @proximaNova, Arial, Helvetica, sans-serif;
-        font-size: 18px;
-        margin-bottom: 20px;
-        color: #3a2d27;
-        box-sizing: border-box;
-        &--lead {
-            margin-right: 20px;
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 27px 30px 25px;
+        border: none;
+        border-radius: 7px;
+        box-shadow: inset 0px 6px 9px 7px #d1d1d1;
+        text-align: center;
+        .training-text(@base-text-col);
+        &:last-child {
+            margin-bottom: 0;
         }
-        &:focus {
-            background-color: transparent;
-            border: 1px solid #3a2d27;
-            padding: 18px;
-            outline: none;
+        &::placeholder {
+            .training-text(@base-text-col)
         }
-        &:active {
-            background-color: transparent;
-            border: 1px solid #3a2d27;
-            padding: 18px;
-            outline: none;
-        }
+    }
+    &__personal {
+        .training-text(@base-text-col);
+        font-size: 14px;
     }
     &__btn {
         width: 100%;
-        margin-bottom: 20px;
-        padding: 20px 30px;
-        box-sizing: border-box;
-        &--lead {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
+        margin-bottom: 42px;
+    }
+    &__control {
+        .training-text(@base-text-col);
+        display: block;
+        margin-top: 12px;
     }
     &__close-btn {
         position: absolute;
-        top: 20px;
-        right: 25px;
+        top: 10px;
+        right: 10px;
         display: block;
-        width: 25px;
-        height: 25px;
-        background-image: url('../img/close-cross.png');
-        background-position: 0 0;
+        width: 60px;
+        height: 60px;
+        background-image: url("../img/close-cross.svg");
+        background-position: 100% 0;
         background-repeat: no-repeat;
-        background-size: contain;
-        z-index: 101;
+        background-size: cover;
         cursor: pointer;
-    }
-    &__footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    &__checkbox {
-        width: 20px;
-        height: 20px;
-        margin-right: 15px;
-    }
-    &__footer-text {
-        font-family: @proximaNova-l, Arial, Helvetica, sans-serif;
-        font-size: 18px;
-        color: #000;
-        & a {
-            color: #000;
-        }
-    }
-    &__link {
-        font-family: SegoeUI-L,Arial,Helvetica,sans-serif;
-        font-size: 22px;
-        margin-bottom: 40px;
-        text-decoration: underline;
-        color: #5a4136;
-        cursor: pointer;
+        z-index: 110;
     }
 }
-
-.form__field::-webkit-input-placeholder {
-    color: #5a4136;
-}
-
-
-/* ADAPTIVE */
-
 @media @tablet {
     .form {
-        &__inner--lead {
-            -ms-flex-direction: row;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            & .form__btn {
-                width: 480px;
-            }
+        &__wrap {
+            position: fixed;
+            margin-left: -300px;
+            width: 600px;
+            bottom: 58px;
         }
-        &__field {
-            &--lead {
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
+        &__title {
+            .training-title(30px, 20px);
         }
-    }
-}
-@media @phablet {
-    .form {
-        &__inner--lead {
-            flex-direction: column;
-            & .form__btn {
-                width: 100%;
-            }
-        }
-        & .form__footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        &__field {
-            &--lead {
-                width: 100%;
-                margin-right: 0;
-                &:last-child {
-                    margin-right: 0;
-                }
-            }
-        }
-        &__checkbox {
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
+        &__inner {
+            padding: 86px 100px 60px;
         }
     }
 }
 @media @phone {
     .form {
         &__wrap {
-            width: 100%;
-            &--header {
-                padding: 40px 20px;
-            }
-            &--popup {
-                width: 320px;
-                top: 20px;
-                margin-left: -160px;
-                & .form__btn {
-                    padding: 20px 10px;
-                }
-            }
+            position: absolute;
+            margin-left: -160px;
+            width: 320px;
+            bottom: 58px;
+        }
+        &__close-btn {
+            width: 45px;
+            height: 45px;
+        }
+        &__title {
+            .training-title(28px, 20px);
+        }
+        &__inner {
+            padding: 70px 30px 40px;
+        }
+        &__personal {
+            line-height: 1.8;
         }
     }
 }
