@@ -16,6 +16,17 @@
         background-repeat: no-repeat;
         background-size: cover;
         z-index: 5;
+
+        // &:after {
+        //     content: '\A';
+        //     position: absolute;
+        //     width: 100%; 
+        //     height:100%;
+        //     top:0; 
+        //     left:0;
+        //     background:rgba(0,0,0,0.5);
+        //     opacity: 1;
+        // }
     }
     &__inner {
         display: grid;
@@ -40,7 +51,7 @@
         font-family: @futura-b, Arial, Helvetica, sans-serif;
         font-size: 34px;
         line-height: 1.7;
-        color: @header-title-col;
+        color: #0d704c; // color: @header-title-col;
         text-transform: uppercase;
     }
     &__slogan {
@@ -54,7 +65,7 @@
         font-family: @futura-b, Arial, Helvetica, sans-serif;
         font-size: 36px;
         line-height: 1;
-        color: @header-title-col;
+        color: #0d704c; // color: @header-title-col;
         text-transform: uppercase;
     }
     &__right {
@@ -63,7 +74,7 @@
         justify-content: center;
         overflow: hidden;
         & img {
-            width: 100%;
+            width: 80%;
             height: auto;
         }
     }
