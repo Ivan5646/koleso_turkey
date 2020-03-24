@@ -206,8 +206,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .audience {
-	padding-top: 120px;
-	padding-bottom: 270px;
+	padding-top: 70px;
+	padding-bottom: 120px;
 	background-color: #F4F4F4;
 	background: linear-gradient(174deg, #F4F4F4 79%, #ffffff 50%);
 }
@@ -230,8 +230,8 @@ input[type='number']::-webkit-outer-spin-button {
 
 .audience__item {
 	position: relative;
-	margin-bottom: 30px;
-	padding: 42px 42px 64px 104px;
+	margin-bottom: 18px;
+	padding: 42px 42px 42px 104px;
 	border-radius: 10px;
 	background-color: #fff;
 }
@@ -244,8 +244,9 @@ input[type='number']::-webkit-outer-spin-button {
 
 .audience__num {
 	position: absolute;
-	top: 15px;
 	left: 15px;
+	top: 50%;
+	transform: translateY(-50%);
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
@@ -255,19 +256,13 @@ input[type='number']::-webkit-outer-spin-button {
 	width: 60px;
 	height: 60px;
 	border-radius: 5px;
-	background: radial-gradient(#F8CC32, #DD9D3C);
-}
-
-.audience__num span {
-	font-family: "FuturaPT-Bold", Arial, Helvetica, sans-serif;
-	font-size: 36px;
-	line-height: 1;
-	color: #ffffff;
+	background-image: url(../img/palm.png);
+	background-size: 50px;
+	background-repeat: no-repeat;
 }
 
 .knowledge {
-	padding-top: 50px;
-	padding-bottom: 150px;
+	padding-bottom: 50px;
 }
 
 .knowledge__inner {
@@ -297,7 +292,9 @@ input[type='number']::-webkit-outer-spin-button {
 	-ms-flex-pack: justify;
 	justify-content: space-between;
 	width: 100%;
-	margin-bottom: 50px;
+	margin-bottom: 12px;
+	-ms-flex-align: center;
+	align-items: center;
 }
 
 .knowledge__item:last-child {
@@ -311,10 +308,9 @@ input[type='number']::-webkit-outer-spin-button {
 	align-items: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	margin-right: 20px;
-	margin-top: -16px;
 	background-color: #F4F4F4;
 	border-radius: 50%;
 }
@@ -339,7 +335,7 @@ input[type='number']::-webkit-outer-spin-button {
 	align-items: center;
 	-ms-flex-pack: center;
 	justify-content: center;
-	margin-top: -104px;
+	border-radius: 15px;
 	overflow: hidden;
 }
 
@@ -375,11 +371,11 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .video-block {
-	padding-top: 215px;
-	padding-bottom: 270px;
+	padding-top: 50px;
+	padding-bottom: 145px;
 	margin-bottom: -60px;
 	background-color: #F4F4F4;
-	background: linear-gradient(-174deg, #F4F4F4 79%, #fff 50%);
+	background: linear-gradient(-174deg, #F4F4F4 75%, #fff 50%);
 }
 
 .video-block__inner {
@@ -419,8 +415,8 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .coach-block {
-	padding-bottom: 120px;
-	padding-top: 60px;
+	padding-bottom: 40px;
+	padding-top: 20px;
 }
 
 .coach-block__inner {
@@ -434,7 +430,7 @@ input[type='number']::-webkit-outer-spin-button {
 
 .coach-block__title {
 	display: block;
-	margin-bottom: 72px;
+	margin-bottom: 24px;
 	font-family: "FuturaPT-Bold", Arial, Helvetica, sans-serif;
 	font-size: 36px;
 	line-height: 1.5;
@@ -1099,10 +1095,6 @@ input[type='number']::-webkit-outer-spin-button {
 
 .knowledge__item {
 	top: -36px;
-}
-
-.knowledge__img-wrap {
-	margin-top: -36px;
 }
 
 .middle-title {

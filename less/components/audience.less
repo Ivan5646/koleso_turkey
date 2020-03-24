@@ -1,6 +1,6 @@
 .audience {
-    padding-top: 120px;
-    padding-bottom: 270px;
+    padding-top: 70px;
+    padding-bottom: 120px;
     background-color: @decor-bg;
     background: linear-gradient(@bg-deg, @decor-bg 79%,#ffffff 50%);
     &__title {
@@ -13,31 +13,36 @@
     }
     &__item {
         position: relative;
-        margin-bottom: 30px;
-        padding: 42px 42px 64px 104px;
+        margin-bottom: 18px;
+        padding: 42px 42px 42px 104px;
         border-radius: 10px;
-        background-color: #fff;
+        background-color: #fff;         
     }
     &__text {
         .training-text(@base-text-col);
     }
     &__num {
         position: absolute;
-        top: 15px;
+        // top: 15px;
         left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
         display: flex;
         align-items: center;
         justify-content: center;
         width: 60px;
         height: 60px;
         border-radius: 5px;
-        background: @decoration;
-        & span {
-            font-family: @futura-b, Arial, Helvetica, sans-serif;
-            font-size: 36px;
-            line-height: 1;
-            color: #ffffff;
-        }
+        background-image: url(../img/palm.png);
+        background-size: 50px;
+        background-repeat: no-repeat;
+
+        // & span {
+        //     font-family: @futura-b, Arial, Helvetica, sans-serif;
+        //     font-size: 36px;
+        //     line-height: 1;
+        //     color: #ffffff;
+        // }
     }
 }
 @media @tablet {
