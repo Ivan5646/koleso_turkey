@@ -460,13 +460,6 @@ input[type='number']::-webkit-outer-spin-button {
 	font-size: 20px;
 }
 
-.payment {
-	padding-top: 50px;
-	padding-bottom: 70px;
-	background-color: #fff;
-	border-radius: 10px;
-}
-
 .payment__header {
 	display: -ms-flexbox;
 	display: flex;
@@ -479,6 +472,7 @@ input[type='number']::-webkit-outer-spin-button {
 	padding-left: 70px;
 	padding-right: 70px;
 	background-color: #F4F4F4;
+	border-radius: 10px;
 }
 
 .payment__text {
@@ -499,6 +493,10 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 .payment__inner {
+	padding-top: 50px;
+	padding-bottom: 70px;
+	background-color: #fff;
+	border-radius: 10px;
 	padding-top: 38px;
 	padding-left: 70px;
 	padding-right: 70px;
